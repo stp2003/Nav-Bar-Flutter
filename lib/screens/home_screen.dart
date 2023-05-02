@@ -1,8 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:side_nav_bar/sidebar/side_nav_bar.dart';
 
-class HomeScreen extends StatelessWidget {
+import '../push_notif_service.dart';
+
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    PushNotificationService().init();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
